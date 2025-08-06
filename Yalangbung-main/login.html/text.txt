@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login - Online Store</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <section class="login-box">
+    <h2>Login / Signup</h2>
+    <form onsubmit="login(event)">
+      <label>Email: <input type="email" id="email" required></label><br>
+      <label>Password: <input type="password" id="password" required></label><br>
+      <button type="submit">Login</button>
+    </form>
+    <p class="note">New users can just sign up with email + password. Data stored locally.</p>
+  </section>
+
+  <script src="assets/js/auth.js"></script>
+</body>
+</html>
