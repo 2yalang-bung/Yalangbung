@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Online Store</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body onload="checkLogin()">
+  <header>
+    <h1>Online Store</h1>
+    <nav>
+      <button onclick="viewCart()">Cart (<span id="cart-count">0</span>)</button>
+      <button onclick="logout()">Logout</button>
+    </nav>
+  </header>
+
+  <section id="filters">
+    <h3>Filter Products</h3>
+    <label>Search: <input type="text" id="search-box" oninput="applyFilters()"></label>
+    <label>Category:
+      <select id="category-filter" onchange="applyFilters()">
+        <option value="all">All</option>
+        <option value="Clothing">Clothing</option>
+        <option value="Electronics">Electronics</option>
+        <option value="Books">Books</option>
+      </select>
+    </label>
+    <label>Min Price: <input type="number" id="min-price" oninput="applyFilters()"></label>
+    <label>Max Price: <input type="number" id="max-price" oninput="applyFilters()"></label>
+  </section>
+
+  <main id="product-list"></main>
+
+  <section id="cart-section" class="hidden">
+    <h2>Your Cart</h2>
+    <ul id="cart-items"></ul>
+    <button onclick="checkout()">Checkout</button>
+  </section>
+
+  <section id="checkout-form" class="hidden">
+    <h2>Checkout</h2>
+    <form onsubmit="submitOrder(event)">
+      <label>Name: <input type="text" id="name" required></label><br>
+      <label>Email: <input type="email" id="user-email" readonly></label><br>
+      <label>Address: <textarea id="address" required></textarea></label><br>
+      <button type="submit">Place Order</button>
+    </form>
+  </section>
+
+  <section id="order-confirmation" class="hidden">
+    <h2>Thank you for your order!</h2>
+    <p>We have received your request and will process it soon.</p>
+  </section>
+
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
